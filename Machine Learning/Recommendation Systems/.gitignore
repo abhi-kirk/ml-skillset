@@ -1,0 +1,7 @@
+*.idea/*
+*.zip
+*.csv
+ml-100k/*
+*.png
+*pyc
+__pycache__/*

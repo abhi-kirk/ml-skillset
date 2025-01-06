@@ -1,0 +1,14 @@
+## [Random Forests Algorithm](https://carbonati.github.io/posts/random-forests-from-scratch/)
+- Given input data $(X, y)$, for each tree we want to construct:
+  - Draw a bootstrapped sample (same size, with replacement) from the data. 
+    - Will also generate OOB data. 
+  - Limit data to the max number of features (sampled randomly) defined by the hyperparameter. 
+  - Find the root node by:
+    - Going over all features, compare all values to other feature-values to obtain information gain for every split point (feature-value being considered). 
+      - Information gain is defined as the difference of (sum of) children entropy from the parent entropy. 
+    - Find the split point with the max information gain, and create the root node. 
+      - Check min sample data required for each split point, as defined by the hyperparameter. 
+  - Keep repeating last step until each node consists of a single class only (all except one child contains data), or we have reached the max depth.
+  - Once the tree is constructed, use the OOB samples to calculate the OOB error for each tree. 
+    - This is done by performing inference on the tree using OOB data. 
+- Output the ensemble of trees, along with the aggregated OOB error. 
