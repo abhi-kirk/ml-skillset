@@ -47,6 +47,20 @@
     - Fine-tuning training and validation loss, cosine sim from anchors, recall@k and mrr@k when run with retriever. 
     - Embedding generation latency and resource utilization.   
 
+- **FAQ Router**
+  - ?
+
+- **Statistical Reranker**
+  - Anomaly detection with MAD, 
+
+- **Embedding Model Fine-Tuning**
+  - Hyperparameters:
+    - Number of layers frozen, 
+    - Learning rate, 
+    - Quantization, 
+    - Loss function, 
+    - Optimizer, 
+
 - **Retriever & Re-ranker**
   - Parameters:
     - Number of top-k to retrieve based on llm max context length, 

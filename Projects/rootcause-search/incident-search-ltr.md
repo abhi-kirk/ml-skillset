@@ -26,6 +26,7 @@
   - Testing using held-out data show >30% improvement in ranking metrics over the keyword-match approach. This should translate to better incident resolution times. 
   - GNN inference latency is an ongoing challenge. 
 
----------------
 
-# Deep-Dive
+## Deep Dive
+- **How was labeling done for LTR?**
+- **What were the specific challenges with GNN retrieval approach? How can they be mitigated?**
