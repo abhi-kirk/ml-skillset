@@ -21,7 +21,7 @@
 - Because of the gradient scaling, LambdaNet does not explicitly minimize the cross-entropy loss. 
 
 ## LambdaMART
-- *Summary*: Combines ideas from LambdaNet and MART (Multiple Additive Regression Trees) to leverage boosted trees. 
+- *Summary*: Combines ideas from LambdaNet and MART (Multiple Additive Regression Trees) to leverage boosted trees instead of a neural network. 
 - *Notes*:
   - Metric-aware gradient scaling with additive gradient boosted trees. 
   - Trees are grown to predict the Lambda gradients at every iteration. 
