@@ -28,5 +28,13 @@
 
 
 ## Deep Dive
-- **How was labeling done for LTR?**
-- **What were the specific challenges with GNN retrieval approach? How can they be mitigated?**
+- *Ground truth labels for LTR training*
+  - Filter our incidents with no root cause present, as determined using a language model. 
+  - For a specific query, the corresponding group is the top-50 retrieved incident tickets, based on the highest cosine similarity scores between query embedding and incident (symptom + root cause) embeddings. 
+  - Rank 1 is the actual ticket id where the query is sourced from (irrespective of if this ticket was part of the top-50 retrieved or not). 
+  - Ranks 2..50 are created from a weighted average of several query/incident features:
+    - Retrieval cosine similarity score. 
+    - Boolean match between query cluster id and incident cluster id (clusters are created over all incidents). 
+    - Incident recency. 
+    - Boolean match between query team id and incident team id. 
+    - Boolean match between query product id and incident product id. 
