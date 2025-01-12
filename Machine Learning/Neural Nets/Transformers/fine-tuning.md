@@ -1,0 +1,12 @@
+## BERTScore
+- Computes Precision, Recall and F1 scores given generated text and reference text. 
+- Steps:
+  - Convert generated and reference text to tokens using a BERT tokenizer. 
+  - Create embeddings for each token using a BERT model (compatible with the tokenizer used in the previous step). 
+  - Compute cosine similarities between each token embedding in the generated text, with each token embedding in the reference text. 
+  - *Recall*:
+    - For each token in the reference text, find the maximum cosine similarity with any token in the generated text. 
+    - Compute the average of these maximum similarities across all tokens in the reference text. 
+  - *Precision*:
+    - For each token in the generated text, find the maximum cosine similarity with any token in the reference text. 
+    - Compute the average of these maximum similarities across all tokens in the generated text. 
