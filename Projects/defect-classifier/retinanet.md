@@ -1,3 +1,5 @@
+# RetinaNet
+
 - **RetinaNet Motivation**
   - For some inspection lines where several defects were being captured by the vision system in individual images, I developed and deployed a (short-lived) RetinaNet model which allowed a one-pass defect detection and classification system. 
 

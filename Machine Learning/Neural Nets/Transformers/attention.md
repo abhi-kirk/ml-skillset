@@ -45,7 +45,7 @@ With very deep networks like this one, we may run into optimization issues.
 **Solutions**:
 - *Skip Connections* ([Paper](https://arxiv.org/pdf/1512.03385))
     - We transform the data, and have an addition to the output from the original features.
-    - During backprop, addition operation simply passes through the gradients. Hence with skip connections, we will have a gradient *super highway* for gradients to flow to the original inputs unimpeded (at least at initialziation; later in the optimization the transformation blocks kick in).
+    - During backprop, addition operation simply passes through the gradients. Hence with skip connections, we will have a gradient *super highway* for gradients to flow to the original inputs unimpeded (at least at initialization; later in the optimization the transformation blocks kick in).
     - We implemenet skip/residual connections with self-attention and feedforward networks separately - where we fork off, do computations (self-attention or feedforward), and come back to sum the results. 
 - *Layer Normalization* ([Paper](https://arxiv.org/pdf/1607.06450))
     - Very similar to Batch Normalization; but making sure each token embedding has zero mean and unit variance at initialization.
