@@ -49,6 +49,8 @@ With very deep networks like this one, we may run into optimization issues.
     - We implemenet skip/residual connections with self-attention and feedforward networks separately - where we fork off, do computations (self-attention or feedforward), and come back to sum the results. 
 - *Layer Normalization* ([Paper](https://arxiv.org/pdf/1607.06450))
     - Very similar to Batch Normalization; but making sure each token embedding has zero mean and unit variance at initialization.
+      - Batch Normalization: For each feature in the batch, normalize activations to zero mean and unit variance. 
+      - Scale and shift, which will create additional learned parameters. 
     - Pre-Norm formulation (slight departure from paper): The *Add & Norm* operation in the paper is implemented after the attention and feedforward layers. However, now it is common practice to implement Normalization before these transformation layers.
     - Aside from inserting it before transformation layers, we also insert it before the final transformer linear layer.
     - Implemented at a per token level. 
