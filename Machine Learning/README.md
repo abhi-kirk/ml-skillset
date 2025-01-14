@@ -51,3 +51,6 @@ $$b \leftarrow b - \alpha\frac{\partial L}{\partial b}$$
 ## KL Divergence
 $$KL(p, q) = \sum_i p_i\log\left(\frac{p_i}{q_i}\right)$$
 where $p$ and $q$ are probability distributions. 
+
+## Z-score
+$$\frac{x - \mu}{\sigma}$$
