@@ -29,18 +29,36 @@
 ## Research Method
 
 - *Problem formulation*
+  - Analysis on historical tickets: SRE business metrics
+  - RAG system with local models, then endpoint
 
 - *Research literature*
+  - Local LLM models: Falcon, Mistral, Llama
+  - Vector DBs: understanding how indexing works with ANN
+  - LLM concepts from seminal papers
 
 - *Experiment design*
+  - Data preprocessing: cleaning, chunking
+  - Retriever parameters experiments: k, distance metric
+  - Reranker
+  - Title-weighted embeddings
+  - LLM guardrails
 
 - *Model evaluation*
+  - Separate retriever and reader metrics
+  - Business metrics
 
 - *Dealing with uncertainty*
+  - Thorough golden dataset for testing across teams
+  - Robust cloud infrastructure
+  - Including diverse data in fine-tuning dataset
 
 - *Real-world experimentation*
+  - Canary release before large-scale prod
+  - Incorporating feedback from users
 
 - *Debugging and interpreting results*
+  - 
 
 - *Collaboration and communication*
 
