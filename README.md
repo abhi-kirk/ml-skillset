@@ -27,6 +27,9 @@
   - Model monitoring including data drift. 
 
 - *Debugging and interpreting results*
+  - Feature importance using perturbation analysis, or decision tree splits, or hypothesis testing. 
+  - Visualize higher dimension data in lower ddimensions using UMAP. 
+  - Statistical analysis where possible (linear models). 
 
 - *Collaboration and communication*
   - Different but accurate explanations for different audiences. 
