@@ -1,38 +1,91 @@
-from statistics import mean, stdev
-from sklearn.datasets import make_blobs
-from scipy.stats import norm
+import numpy as np
 
-def fit_distribution(data):
-    mu = mean(data)
-    sigma = stdev(data)
-    return norm(mu, sigma)
+class NaiveBayesBinaryClassifier:
+    def __init__(self):
+        self.class_priors = None
+        self.class_means = None
+        self.class_variances = None
+    
+    def fit(self, X, y):
+        """
+        Train the Naive Bayes model using the training data X and labels y.
+        """
+        # Number of samples and features
+        n_samples, n_features = X.shape
+        
+        # Calculate class priors (P(y))
+        classes = np.unique(y)
+        self.class_priors = {}
+        for c in classes:
+            self.class_priors[c] = np.sum(y == c) / n_samples
+        
+        # Calculate mean and variance for each feature in each class (P(X|y))
+        self.class_means = {}
+        self.class_variances = {}
+        
+        for c in classes:
+            X_c = X[y == c]
+            self.class_means[c] = np.mean(X_c, axis=0)
+            self.class_variances[c] = np.var(X_c, axis=0)
+    
+    def predict(self, X):
+        """
+        Predict the class labels for the input samples X.
+        """
+        y_pred = []
+        
+        for sample in X:
+            # Calculate the posterior probability for each class using Bayes' rule
+            posteriors = {}
+            
+            for c in self.class_priors:
+                prior = np.log(self.class_priors[c])  # log(P(y))
+                likelihood = np.sum(np.log(self._gaussian_likelihood(sample, c)))  # log(P(X|y))
+                posteriors[c] = prior + likelihood
+            
+            # Choose the class with the maximum posterior probability
+            y_pred.append(max(posteriors, key=posteriors.get))
+        
+        return np.array(y_pred)
+    
+    def _gaussian_likelihood(self, x, class_label):
+        """
+        Compute the likelihood of the features x given the class using Gaussian distribution.
+        """
+        mean = self.class_means[class_label]
+        var = self.class_variances[class_label]
+        
+        # For each feature, calculate the Gaussian probability density
+        likelihood = (1 / np.sqrt(2 * np.pi * var)) * np.exp(-(x - mean) ** 2 / (2 * var))
+        return likelihood
 
-def class_probability(X, prior, dist1, dist2):
-    return prior * dist1.pdf(X[0]) * dist2.pdf(X[1])
 
-# generate data
-X, y = make_blobs(n_samples=100, centers=2, n_features=2, random_state=1)
+# Sample data: 10 samples, 2 features
+X = np.array([
+        [1.2, 2.3], 
+        [2.3, 3.4], 
+        [3.1, 1.5], 
+        [4.5, 2.2], 
+        [5.1, 3.3], 
+        [6.2, 4.3], 
+        [7.1, 5.1], 
+        [8.3, 6.2], 
+        [9.0, 7.3], 
+        [10.2, 8.4]
+    ])
 
-# extract data for each class
-Xy0, Xy1 = X[y==0], X[y==1]
+# Binary labels (0 or 1)
+y = np.array([0, 0, 0, 1, 1, 1, 1, 1, 1, 0])
 
-# calculate priors for each class
-prior0, prior1 = len(Xy0)/len(y), len(Xy1)/len(y)
+# Initialize and train the Naive Bayes classifier
+model = NaiveBayesBinaryClassifier()
+model.fit(X, y)
 
-# create PDFs for first feature, for each class
-X1y0 = fit_distribution(Xy0[:, 0])
-X1y1 = fit_distribution(Xy1[:, 0])
+# Sample test data (2 new samples)
+X_test = np.array([[3.0, 2.5], [8.0, 6.5]])
 
-# create PDFs for second feature, for each class
-X2y0 = fit_distribution(Xy0[:, 1])
-X2y1 = fit_distribution(Xy1[:, 1])
+# Make predictions
+predictions = model.predict(X_test)
 
-# select sample for testing 
-Xsample, ysample = X[0], y[0]
-
-# calculate probability for each class
-py0 = class_probability(Xsample, prior0, X1y0, X2y0)
-py1 = class_probability(Xsample, prior1, X1y1, X2y1)
-
-print(f"Class 0 probability = {py0 * 100}")
-print(f"Class 1 probability = {py1 * 100}")
+# Print predictions
+print("Predictions:", predictions)

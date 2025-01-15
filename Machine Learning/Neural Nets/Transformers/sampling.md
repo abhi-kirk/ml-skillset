@@ -26,7 +26,8 @@
 ## Sampling Methods:
 - *Random Sampling*: Sample from the output distribution over the full vocab. 
 - *Top-k Sampling*: Only consider the top-$k$ tokens with highest probabilities. 
-- *Top-p (Nucleus) Sampling*: Only consider the tokens which result in the cumulative sum of probabilities of $p$. 
+- *Top-p (Nucleus) Sampling*: Only consider the tokens which result in the cumulative sum of probabilities of $p$ (threshold). 
+  - Use `heap` data structure to implement. 
 - Random, top-$k$ and top-$p$ samplings can be all used together. Example
   - Limit the output tokens to $k$, 
   - Further limit to tokens where cumulative sum (taken in descending order) reaches $p$, 
