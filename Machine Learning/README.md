@@ -55,6 +55,8 @@ where $a.b$ is the dot product (summed element-wise multiplication), and $||x||$
 ## KL Divergence
 $$KL(p, q) = \sum_i p_i\log\left(\frac{p_i}{q_i}\right)$$
 where $p$ and $q$ are probability distributions. 
+$$\text{Cross-Entropy}(y,\hat{y}) = E(y) + KL(y,\hat{y})$$
+where $E(y)$ is the entropy (uncertainty) of the true distribution (constant for a given dataset). 
 
 ## Z-score
 $$\frac{x - \mu}{\sigma}$$
