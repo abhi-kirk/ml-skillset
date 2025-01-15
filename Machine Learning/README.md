@@ -11,7 +11,7 @@ $$\hat{y_i} = w_i^T + b_i$$
 $$l_i = \frac{1}{2} (\hat{y_i} - y_i)^2$$
 where $l_i$ is the MSE loss. 
 
-## Logistic Regression / Single Neuron
+## Logistic Regression / Single Neuron (no activation)
 $$z_i = w_i^Tx_i + b_i$$
 $$\hat{y_i} = \sigma(z_i) = \frac{1}{1+e^{-z_i}}$$
 $$l_i = -[y_i\log(\hat{y_i}) + (1-y_i)\log(1-\hat{y_i})]$$
