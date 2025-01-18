@@ -8,7 +8,9 @@ $$\frac{e^{z_i}}{\sum_{i}e^{z_i}}$$
 
 ## Linear Regression
 $$\hat{y_i} = w_i^T + b_i$$
+
 $$l_i = \frac{1}{2} (\hat{y_i} - y_i)^2$$
+
 where $l_i$ is the MSE loss. 
 
 ## Logistic Regression / Single Neuron (no activation)
