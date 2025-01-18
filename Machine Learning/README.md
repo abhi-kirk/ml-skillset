@@ -64,9 +64,9 @@ where $N$ is the total number of documents ($D$), and $d$ is the number of docum
 $$\text{cov}(x, y) = \frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{n-1}$$
 
 ## Cosine Similarity
-$$\frac{a.b}{||a||.||b||}$$
+$$\frac{a.b}{\Vert a\Vert.\Vert b\Vert}$$
 
-where $a.b$ is the dot product (summed element-wise multiplication), and $||x||$ represents the 2-norm of $x$. 
+where $a.b$ is the dot product (summed element-wise multiplication), and $\Vert x\Vert$ represents the 2-norm of $x$. 
 
 ## KL Divergence
 $$KL(p, q) = \sum_i p_i\log\left(\frac{p_i}{q_i}\right)$$
