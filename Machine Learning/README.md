@@ -13,7 +13,7 @@ $$l_i = \frac{1}{2} (\hat{y_i} - y_i)^2$$
 
 where $l_i$ is the MSE loss. 
 
-## Logistic Regression / Single Neuron (no activation)
+## Logistic Regression / Single Neuron
 $$z_i = w_i^Tx_i + b_i$$
 
 $$\hat{y_i} = \sigma(z_i) = \frac{1}{1+e^{-z_i}}$$
