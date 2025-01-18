@@ -35,6 +35,8 @@ $$\frac{\partial L}{\partial b} = \sum_{i=1}^n \frac{\partial l_i}{\partial b}$$
 
 where $r_i$ is the residual. 
 
+Note that since the total loss or loss gradient (needed for parameter updates) is additive and independent over the data samples, it can be computed in a distributed way. 
+
 ## Parameter Updates
 $$w \leftarrow w - \alpha \frac{\partial L}{\partial w}$$
 
