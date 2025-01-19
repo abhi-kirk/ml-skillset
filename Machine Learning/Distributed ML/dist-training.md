@@ -38,8 +38,8 @@
     - All workers are given a non-overlapping data shard. 
     - All workers hold a complete copy of the model. 
     - Each worker creates mini-batches from this shard, and for each mini-batch computes the gradient. Using gradient aggregation, the total gradient for the shard is computed over several iterations. 
-    - Each worker communicates its shard gradient to all other workers in the synchronization step. Another gradient aggregation step accumulates a common gradient across all workers. 
-    - The full gradient is broadcasted to all workers to ensure synchroinization. 
+    - Each worker communicates its shard gradient to all other workers in a synchronization step. Another gradient aggregation step accumulates a common set of gradients across all workers. 
+    - The full set of gradients is broadcasted to all workers to ensure synchronization. 
     - Each worker (after scaling the learning rate with the number of workers) updates the model parameters for its own model. 
 
 ## Model Parallelism
@@ -63,12 +63,13 @@
     - Partition the model layers within a group. 
     - E.g. Split the model layers across the 4 GPUs inside each group. 
   - Data parallelism across the groups:
-    - Each group processes a different mini-batch. 
+    - Each group processes a different data shard. 
     - E.g. Gradient accumulation across the 2 groups. 
 - *Advantages*:
   - Fully distributed training at scale required for SOTA results. 
 - *Limitations*:
   - Complexity. 
+  - Communication overhead. 
 - *Examples*:
   - SOTA Transformer pretraining: GPT, Llama. 
   - Tesla Dojo supercomputer. 
