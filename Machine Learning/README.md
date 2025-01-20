@@ -1,5 +1,8 @@
 # ML Formulas To Remember
 
+## Numerical Gradient:
+$$\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}$$
+
 ## Sigmoid: 
 $$\frac{1}{1 + e^{-z}} = \frac{e^{z}}{1+e^{z}}$$
 
