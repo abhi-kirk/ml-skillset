@@ -17,7 +17,7 @@
     - Include velocity term $v_t = \beta v_{t-1} - \eta g_t$
     - Update: $w_t = w_{t-1} + v_t$
   - Velocity is the moving average of past gradients: accumulates gradients over time to smooth out updates. 
-  - $\beta$ is the momemtum coefficient (controls how much of the past velocity is retained). 
+  - $\beta$ is the momentum coefficient (controls how much of the past velocity is retained). 
 - *Intuition*:
   - Momentum keeps a running sum of past gradients. This helps build "velocity" in directions with consistent gradients. 
   - In directions with oscillating gradients (e.g., steep slopes), the accumulated velocity cancels out the back-and-forth updates, stabilizing the optimization. 
@@ -41,9 +41,9 @@
   - Smaller updates in this case reduces the risk of oscillations or divergence during optimization. 
   - Conversely, larger updates when loss is less sensitive to the parameter (i.e., smaller accumulated gradients) will ensure faster optimization. 
   - Adagrad hence balances the contribution of each parameter to the optimization process. 
-  - Compare to climbing a hill with a steep slops (large gradient) or a flat slope (small gradient). 
+  - Compare to climbing a hill with a steep slope (large gradient) or a flat slope (small gradient). 
 - *Advantages*:
-  - No manual learning rate tuning. 
+  - No manual learning rate tuning (except the global). 
   - Useful for problems with sparse data/features (NLP, recommender systems) since in these cases the parameters are updated unevenly with SGD. 
 - *Limitations*:
   - Can cause the learning to halt prematurely. 
@@ -65,10 +65,10 @@
 - *Disadvantage*:
   - Now we need to tune two hyperparameters: $\eta$ and the decay rate $\beta$. 
   - Convergence speed can be limited since RMSProp smooths out rapid changes in the gradient magnitude over time. 
-  - Does not address Adagrad'd limitation of not being able to escape the local minima. 
+  - Does not address Adagrad's limitation of not being able to escape the local minima. 
 
 ## Adam (Adaptive Moment Estimation)
-- *Summary*: Simultaneously adapts the learning rates for each parameter individually (like Adagrad and RMSProp) while incorporating Mommentum to smooth updates. 
+- *Summary*: Simultaneously adapts the learning rates for each parameter individually (like Adagrad and RMSProp) while incorporating Momentum to smooth updates. 
 - *Working*:
   - Computes exponentially moving average of past gradients (first moment), as well as exponentially moving average of squared gradients (second moment). 
     - Note that a moving average is used instead of cumulative sum. 
@@ -85,4 +85,4 @@
 
 
 ## AdamW (Adam with Decoupled Weight Decay)
-- *Summary*: Improves generation of Adam by using decoupling the weight decay from the gradient updates. 
+- *Summary*: Improves generalization of Adam by decoupling the weight decay from the gradient updates. 
