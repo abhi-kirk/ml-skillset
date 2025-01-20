@@ -39,8 +39,9 @@
     - All workers hold a complete copy of the model. 
     - Each worker creates mini-batches from this shard, and for each mini-batch computes the gradient. Using gradient aggregation (sum), the total gradient for the shard is computed over several iterations. 
     - Each worker communicates its shard gradient to all other workers in a synchronization step. Another gradient aggregation (average) step accumulates a common set of gradients across all workers. 
+      - If sum is used to aggregate gradients then we have to scale the learning rate accordingly. 
     - The full set of gradients is broadcasted to all workers to ensure synchronization. 
-    - Each worker (after scaling the learning rate with the number of workers) updates the model parameters for its own model. 
+    - Each worker (after possibly scaling the learning rate with the number of workers) updates the model parameters for its own model. 
 
 ## Model Parallelism
 - *Problem*:
