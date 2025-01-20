@@ -5,21 +5,20 @@
     - I.E., every weight is using a representation that has 32-bits (4 bytes).
     - Deep learning networks can tolerate significantly lower precision.
 - A100 SX4M 80GB Performance:
-    - FP32 --> (at most) 19.5 TFLOPS.
-    - I.E., we can do at most 19.5 trillion floating point operations
+    - FP32 --> (at most) 19.5 TFLOPS; i.e., we can do at most 19.5 trillion floating point operations per second. 
     - However, as we see from the table, if we go down in specs (TF32, FP16), we can get significant higher performance.
     - Sparsity-based computations (specs marked with an *) are not widely used.
 - A100 SX4M 80GB Memory:
     - Most of the deep learning workflows are *memory-bound*, i.e., the tensor cores during these fast computations (TFLOPS) are just waiting around idle because we can't feed/load them with data fast enough (memory bandwidth).
     - In terms of GPU utilization, if you're using 60% then you're doing extremely well.
 - When we use less performance precision, using less memory is an added benefit.
-- Calculate **tokens/sec** as the objective measure for optimization speedup. 
+- Calculate **tokens/sec** in the training loop as the objective measure for optimization speedup. 
 
 ![nvidia specs](img/nvidia.png)
 
 
 ### TensorCores
-- An 'instruction' in the A100s, which is basically a 4x4 multiplier of matrices with different precisions.
+- TensorCore: An 'instruction' in the A100s, which is basically a 4x4 multiplier of matrices with different precisions.
 - Any time we have matrix multiplication in our computations (which is most of the time with deep learning), it gets broken up into the 4x4 mutipliers. This accelerates the overal computations.
 - The TensorCore instruction for TF32 allows truncating the *mantissa* part of the 32-bits representation of floating point numbers (32 --> 19).
     - This gives us the speedup and memoy savings, however with some approximations (usually not noticeable).
@@ -33,6 +32,7 @@
 - Cropping of mantissa bits so that the actual multiplication happens with truncated bits (TF32).
 - Can result in at most 8x faster computations, albeit bottlenecked by memory bandwidth.
     - We are shoveling around float32s all over between CPU-GPU and within GPU, which is causing the bottleneck. 
+    - Also going from FP32 to TF32 only saves compute time due to lower precision; the memory requirements still stay the same since TF32 also occupies 32 bits in memory. 
 - Might not be available on older GPUs (available on A100-series). 
 
 
