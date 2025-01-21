@@ -60,7 +60,7 @@ We should now have a large model that is (over)fitting the training dataset.
 - Early stopping. 
 
 ~~~
-We should not have reduced overfitting considerably. 
+We should now have reduced overfitting considerably. 
 ~~~
 
 ## Tune
