@@ -10,7 +10,7 @@ Sources:
   - For the task at hand, are local features enough, or do we need global context?
   - What variation is spurious and can be preprocessed out?
   - How far can we downsample?
-  - Label noise. 
+  - Handle noise in labels. 
 - Helps in debugging the neural net predictions. 
 
 ~~~
@@ -24,7 +24,7 @@ We should now have a good understanding of the dataset.
 - Turn off data augmentations. 
 - Visualize data just before passing it to the net. 
 - Choose the simplest model possible for the task, and verify decreasing training loss. 
-- Verify loss@init: `-\log(1/n_classes)`. 
+- Verify loss@init: `-log(1/n_classes)`. 
 - Init well to eliminate "hockey stick" training curves. 
 - Get human baseline metrics. 
 - Get input-independent baseline, i.e. set all inputs to zero. 
@@ -67,3 +67,7 @@ We should not have reduced overfitting considerably.
 - Random over grid search. 
   - Neural nets are sensitive to some parameters than the rest. 
 - Knowledge distillation. 
+
+~~~
+SOTA!
+~~~
