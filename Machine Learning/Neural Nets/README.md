@@ -32,7 +32,7 @@ We should now have a good understanding of the dataset.
   - Batch size should be selected as the largest batch size supported by the available hardware. 
 - Chart dependencies using backprop: 
   - E.g. set the loss to sum of outputs from the $i^{th}$ sample only, and run backward pass. 
-  - Analizing gradients, only the $i^{th}$ input should have a non-zero gradient. 
+  - Analyzing gradients, only the $i^{th}$ input should have a non-zero gradient. 
 - Visualize first-layer weights where fundamental features are learned. 
 - Vectorize the code later, one loop at a time. 
 
