@@ -42,6 +42,7 @@
       - If sum is used to aggregate gradients then we have to scale the learning rate accordingly. 
     - The full set of gradients is broadcasted to all workers to ensure synchronization. 
     - Each worker (after possibly scaling the learning rate with the number of workers) updates the model parameters for its own model. 
+    - Checkpoint model from worker 0 only. 
 
 ## Model Parallelism
 - *Problem*:
@@ -53,6 +54,7 @@
     - Each worker computes the forward pass for its portion of the model, and communicates the activations to the next worker. 
     - The backward pass (gradient computation) proceeds in reverse. 
     - If the model is partitioned non-sequentually, then all workers communicate for a synchronization step (collective communication). 
+    - Checkpoint from each worker. 
 
 ## Hybrid Parallelism
 - *Problem*:
@@ -74,3 +76,12 @@
 - *Examples*:
   - SOTA Transformer pretraining: GPT, Llama. 
   - Tesla Dojo supercomputer. 
+
+
+## Frameworks
+- *Horovod*
+  - Tensorflow/Keras (also supports Pytorch)
+  - Usecase: Distributed CNN training (data parallelism) on Corning's on-prem GPU cluster. 
+- *DDP*
+  - Pytorch
+  - Usecase: Distributed LLM pretraining (data parallelism) on JPMC AWS cloud. 

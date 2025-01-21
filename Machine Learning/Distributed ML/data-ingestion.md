@@ -7,6 +7,7 @@
   - Split data into mini-batches. 
   - Train only with mini-batch to update model sequentially. 
   - Use non-overlapping batches, but shuffle data after every epoch. 
+  - Use multiple i/o workers to load data concurrently. 
 - *Advantages*:
   - Single compute node required. 
 - *Limitations*:
