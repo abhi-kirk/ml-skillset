@@ -4,7 +4,7 @@
 - *Can you walk me through your resume and highlight your most impactful projects?*  
   - STORY: CNN defect classifier
 - *Why are you interested in this role at our company?*  
-  - Tesla's emphasis on innovation building systems of their own, 
+  - Tesla's emphasis on innovation and building systems of their own, 
   - Manufacturing data science background (mention pdm if appropriate), 
   - Experience and strong fundamentals in vision and NLP ML, 
   - Good culture fit as opposed to in a bank. 
