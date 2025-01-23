@@ -1,9 +1,8 @@
 # Experiments for GPT-Vader Pretraining
 
 ## EDA
-- Fraction of text as Markdown tables. 
 - Distribution of data across various teams and products. 
-- 
+- Remove machine-generated text, PII, markdown formatting. 
 
 ## GPT-Vader Training Stats
 - **Data**: JPMC Confluence data extracted from Confluence Cloud API as Markdown files (16 GB compressed text). 
@@ -46,7 +45,7 @@
   - Experiments with probabilistic LLM sampling strategies
 
 - *Real-world experimentation*
-  - Decoding methods: greedy, beam-search with various sampling methods (top0k, nucleus)
+  - Decoding methods: greedy, beam-search with various sampling methods (topk, nucleus)
   - Feedback from real users
 
 - *Debugging and interpreting results*
