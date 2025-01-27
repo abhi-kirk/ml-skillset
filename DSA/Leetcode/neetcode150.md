@@ -1,0 +1,156 @@
+# Neetcode150
+Problems in **Bold** are the ones I have difficulty with currently, and need to be revised; however, these are solvable. 
+
+Problems in ~~strikethrough~~ are too diffucult and not solvable at my current skillset. 
+
+
+- Two Sum
+- **Add Two Numbers**
+- Longest Substring Without Repeating Characters
+- Median of Two Sorted Arrays
+- **Longest Palindromic Substring**
+- Reverse Integer
+- ~~Regular Expression Matching~~
+- Container With Most Water
+- 3Sum
+- **Letter Combinations of a Phone Number**
+- Remove Nth Node From End of List
+- Valid Parentheses
+- Merge Two Sorted Lists
+- Generate Parentheses
+- Merge k Sorted Lists
+- ~~Reverse Nodes in k-Group~~
+- Search in Rotated Sorted Array
+- **Valid Sudoku**
+- Combination Sum
+- **Combination Sum II**
+- Trapping Rain Water
+- **Multiply Strings**
+- **Jump Game II**
+- Permutations
+- **Rotate Image**
+- Group Anagrams
+- ~~Pow(x, n)~~
+- ~~N-Queens~~
+- **Maximum Subarray**
+- **Spiral Matrix**
+- Jump Game
+- Merge Intervals
+- Insert Interval
+- Unique Paths
+- Plus One
+- Climbing Stairs
+- **Edit Distance**
+- Set Matrix Zeroes
+- Search a 2D Matrix
+- ~~Minimum Window Substring~~
+- Subsets
+- **Word Search**
+- **Largest Rectangle in Histogram**
+- Subsets II
+- **Decode Ways**
+- ~~Interleaving String~~
+- Validate Binary Search Tree
+- Same Tree
+- Binary Tree Level Order Traversal
+- Maximum Depth of Binary Tree
+- **Construct Binary Tree from Preorder and Inorder Traversal**
+- **Balanced Binary Tree**
+- ~~Distinct Subsequences~~
+- Best Time to Buy and Sell Stock
+- ~~Binary Tree Maximum Path Sum~~
+- Valid Palindrome
+- **Word Ladder**
+- Longest Consecutive Sequence
+- **Surrounded Regions**
+- **Palindrome Partitioning**
+- **Clone Graph**
+- **Gas Station**
+- Single Number
+- Copy List with Random Pointer
+- Word Break
+- Linked List Cycle
+- Reorder List
+- ~~LRU Cache~~
+- Evaluate Reverse Polish Notation
+- **Maximum Product Subarray**
+- Find Minimum in Rotated Sorted Array
+- **Min Stack**
+- Two Sum II - Input Array Is Sorted
+- ~~Reverse Bits~~
+- Number of 1 Bits
+- House Robber
+- Binary Tree Right Side View
+- Number of Islands
+- Happy Number
+- Reverse Linked List
+- Course Schedule
+- **Implement Trie (Prefix Tree)**
+- Course Schedule II
+- ~~Design Add and Search Words Data Structure~~
+- ~~Word Search II~~
+- House Robber II
+- Kth Largest Element in an Array
+- Contains Duplicate
+- Invert Binary Tree
+- Kth Smallest Element in a BST
+- **Lowest Common Ancestor of a Binary Search Tree**
+- Product of Array Except Self
+- ~~Sliding Window Maximum~~
+- Valid Anagram
+- Meeting Rooms
+- **Meeting Rooms II**
+- Graph Valid Tree
+- Missing Number
+- Alien Dictionary
+- Encode and Decode Strings
+- Walls and Gates
+- Find the Duplicate Number
+- **Find Median from Data Stream**
+- **Serialize and Deserialize Binary Tree**
+- **Longest Increasing Subsequence**
+- ~~Best Time to Buy and Sell Stock with Cooldown~~
+- ~~Burst Balloons~~
+- **Coin Change**
+- Number of Connected Components in an Undirected Graph
+- Longest Increasing Path in a Matrix
+- **Reconstruct Itinerary**
+- Counting Bits
+- Top K Frequent Elements
+- **Design Twitter**
+- ~~Sum of Two Integers~~
+- **Partition Equal Subset Sum**
+- **Pacific Atlantic Water Flow**
+- **Longest Repeating Character Replacement**
+- **Non-overlapping Intervals**
+- **Target Sum**
+- ~~Coin Change II~~
+- **Diameter of Binary Tree**
+- Permutation in String
+- **Subtree of Another Tree**
+- ~~Task Scheduler~~
+- **Palindromic Substrings**
+- **Valid Parenthesis String**
+- Redundant Connection
+- Max Area of Island
+- **Daily Temperatures**
+- **Network Delay Time**
+- Min Cost Climbing Stairs
+- Partition Labels
+- Kth Largest Element in a Stream
+- Binary Search
+- **Swim in Rising Water**
+- **Cheapest Flights Within K Stops**
+- Hand of Straights
+- **Car Fleet**
+- Koko Eating Bananas
+- K Closest Points to Origin
+- **Time Based Key-Value Store**
+- Rotting Oranges
+- Last Stone Weight
+- **Longest Common Subsequence**
+- Count Good Nodes in Binary Tree
+- **Min Cost to Connect All Points**
+- **Minimum Interval to Include Each Query**
+- **Merge Triplets to Form Target Triplet**
+- **Detect Squares**

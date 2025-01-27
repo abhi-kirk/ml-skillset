@@ -24,8 +24,3 @@ Design a search system for videos. Input is text query, and output is a list of 
   - Create and use graph-based algorithms by creating + updating embeddings for user and video features. 
 - ML Metrics: 
   - MRR@k, Recall@k, Precision@k, MAP, Final loss value (when using NNs), nDCG score. 
-
-## Data Preprocessing
-- Data pipeline
-  - ML training: 
-    - 
