@@ -1,7 +1,7 @@
 # Neetcode150
 Problems in **Bold** are the ones I have difficulty with currently, and need to be revised; however, these are solvable. 
 
-Problems in ~~strikethrough~~ are too diffucult and not solvable at my current skillset. 
+Problems in ~~strikethrough~~ are too difficult and not solvable at my current skillset. 
 
 
 - Two Sum
